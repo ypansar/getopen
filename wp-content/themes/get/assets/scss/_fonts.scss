@@ -1,0 +1,15 @@
+$font-name: 'Helvetica';
+//$font-props: (("light", "lightitalic", 300), ("regular", "italic", 400), ("semibold", "semibolditalic", 600), ("bold", "boldItalic", 700), ("extrabold", "extrabolditalic", 900) );
+$font-props: (("light", 300), ("regular", 400), ("semibold", 600), ("bold", 700));
+$font-file-prefix: "/themes/apec/assets/fonts/Helvetica/Helvetica-";
+
+//@each $name1, $name2, $wt in $font-props {
+@each $name1, $wt in $font-props {
+    @font-face {
+	    font-family: $font-name;
+        src:url(#{$font-file-prefix}#{$name1}.woff2) format('woff2'),
+            url(#{$font-file-prefix}#{$name1}.woff) format('woff');
+	    font-weight: $wt;
+	    font-style: normal;
+    }
+}
